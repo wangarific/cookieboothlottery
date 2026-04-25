@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gs-green: #00ae58;
+  --color-gs-green-dark: #008c47;
+  --color-gs-brown: #6b4226;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: linear-gradient(160deg, #f0fdf4 0%, #f9fafb 40%, #fefce8 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Card hover effect - subtle border only */
+.card-hover {
+  transition: border-color 0.15s ease;
+}
+.card-hover:hover {
+  border-color: #00ae58;
+}
+
+/* Draft log line animation */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in-up 0.3s ease-out forwards;
+}
