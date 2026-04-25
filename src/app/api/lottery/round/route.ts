@@ -1,6 +1,8 @@
 import { ensureDb } from "@/lib/db";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(req: Request) {
   const db = await ensureDb();
   const { snake = true, roundOffset = 0 } = await req.json().catch(() => ({ snake: true, roundOffset: 0 }));

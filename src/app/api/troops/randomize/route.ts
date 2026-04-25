@@ -1,6 +1,8 @@
 import { ensureDb } from "@/lib/db";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(req: Request) {
   const db = await ensureDb();
   const { order } = await req.json() as { order: Array<{ id: number; draft_position: number }> };

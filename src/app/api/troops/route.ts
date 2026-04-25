@@ -1,6 +1,8 @@
 import { ensureDb } from "@/lib/db";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   const db = await ensureDb();
   const result = await db.execute("SELECT * FROM troops ORDER BY draft_position, name");
